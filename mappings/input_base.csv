@@ -18,7 +18,7 @@ left_shoulder_top,46,20,46,20
 left_shoulder_bottom,45,21,46,21
 left_arm_top,44,23,46,24
 left_arm_bottom,44,27,46,31
-right_shoulder_top,44,36,44,36
-right_shoulder_bottom,44,37,45,37
-right_arm_top,44,39,46,40
-right_arm_bottom,44,43,46,47
+right_shoulder_top,36,52,36,52
+right_shoulder_bottom,36,53,37,53
+right_arm_top,36,55,38,55
+right_arm_bottom,36,59,38,63
