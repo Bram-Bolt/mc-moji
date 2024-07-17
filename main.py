@@ -3,7 +3,7 @@ import numpy as np
 import handling
 
 
-input_img = "examples/steve_test.png"
+input_img = "examples/bram.png"
 input_map = "mappings/input_base.csv"
 output_map = "mappings/output_base.csv"
 
