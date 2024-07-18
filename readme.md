@@ -1,7 +1,7 @@
 ### TO DO
 
 - [x] Fix mappings
-- [ ] Alternative Mappings
+- [x] Alternative Mappings
 - [ ] Add second layer
 - [ ] Add Shadows
 - [ ] Add API input
