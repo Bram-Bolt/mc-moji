@@ -24,3 +24,5 @@ right_arm_top_left,52,55,52,56
 right_arm_bottom_left,52,59,52,63
 right_arm_top_right,54,55,54,56
 right_arm_bottom_right,54,59,54,63
+depth_top,47,8,47,9
+depth_bottom,47,11,47,15
