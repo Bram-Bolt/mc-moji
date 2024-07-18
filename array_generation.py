@@ -2,14 +2,10 @@ from PIL import Image
 import numpy as np
 import map_reading
 
-def get_mapped_array(input_map: str, output_map: str, input_img: str) -> np.ndarray:
+def get_mapped_array(input_map: str, output_map: str, inp_array: str) -> np.ndarray:
     # read both files
     inp_data = map_reading.read_map(input_map)
     outp_data = map_reading.read_map(output_map)
-
-    # load input
-    inp = Image.open(input_img).convert("RGBA")
-    inp_array = np.asarray(inp)
 
     # form output
     outp_array = np.zeros((16, 11, 4), dtype=np.uint8)
