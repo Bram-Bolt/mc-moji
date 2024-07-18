@@ -1,6 +1,7 @@
 import csv
 import numpy as np
 
+
 # read both files
 def read_map(filename: str) -> list[list]:
     with open(filename, "r") as csvfile:
