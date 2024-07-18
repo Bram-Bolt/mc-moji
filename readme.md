@@ -6,6 +6,9 @@
 - [x] Add 3D effect of overlay?
 - [x] Add transparency support
 - [x] Add Shadows
-- [ ] Add API input
+- [x] Add API input
+- [ ] CLI system
+- [ ] error handling
+- [ ] Scaling system
 - [ ] Web??
  
