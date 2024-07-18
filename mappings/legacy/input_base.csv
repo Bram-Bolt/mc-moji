@@ -3,8 +3,8 @@ face_top,8,8,14,9
 face_bottom,8,11,14,15
 cheek_top,6,8,7,9
 cheek_bottom,6,11,7,15
-back_head_top,5,8,5,9
-back_head_bottom,5,11,5,15
+back_head_top,0,8,5,9
+back_head_bottom,0,11,5,15
 chest_top_left,20,20,20,21
 chest_middle_left,20,23,20,24
 chest_bottom_left,20,27,20,31
