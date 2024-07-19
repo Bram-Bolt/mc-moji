@@ -10,7 +10,7 @@ def read_map(filename: str) -> list[list]:
     return data
 
 
-# get coords of the csv map
+# get coordinates of the csv map
 def get_coords(i: int, data: list[list]) -> tuple[int, int, int, int]:
     return int(data[i][1]), int(data[i][2]), int(data[i][3]) + 1, int(data[i][4]) + 1
 
@@ -21,6 +21,7 @@ def get_array(i: int, data: list[list], arr: np.ndarray) -> np.ndarray:
     return arr[start_y:end_y, start_x:end_x]
 
 
+# get the skin file array mapped to skin art
 def get_mapped_array(
     input_map: str, output_map: str, inp_array: np.ndarray
 ) -> np.ndarray:
