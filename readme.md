@@ -7,8 +7,10 @@
 - [x] Add transparency support
 - [x] Add Shadows
 - [x] Add API input
-- [ ] CLI system
+- [x] CLI system
 - [ ] error handling
-- [ ] Scaling system
+- [x] Scaling system
+- [ ] Project Wrap up
 - [ ] Web??
+
  
