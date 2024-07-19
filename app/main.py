@@ -45,7 +45,11 @@ args = parser.parse_args()
 
 for idx, skin in enumerate(args.skin):
     app.image_generation.make_image(
-        skin=skin, label=idx, overlay=args.overlay, shadows=args.shadows, size=args.size
+        skin=skin,
+        label=idx + 1,
+        overlay=args.overlay,
+        shadows=args.shadows,
+        size=args.size,
     )
 
 

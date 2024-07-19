@@ -1,6 +1,6 @@
 from PIL import Image
 import numpy as np
-
+import os
 import app.array_generation
 import requests
 from io import BytesIO
@@ -15,14 +15,17 @@ def make_image(
     size: int,  # yet to be supported
     mapping_type: str = "beta",
 ):
-    # config of mappings
+    # Determine the base directory (assuming the script is located in the same directory as the app folder)
+    base_dir = os.path.dirname(os.path.abspath(__file__))
+
+    # Config of mappings
     mapping_type = "beta"
-    mapping_path = f"app/resources/mappings/{mapping_type}"
-    inp_map_base = f"{mapping_path}/input_base.csv"
-    outp_map_base = f"{mapping_path}/output_base.csv"
-    inp_map_overlay = f"{mapping_path}/input_overlay.csv"
-    outp_map_overlay = f"{mapping_path}/output_overlay.csv"
-    shadow_path = "resources/shadows.png"
+    mapping_path = os.path.join(base_dir, "resources", "mappings", mapping_type)
+    inp_map_base = os.path.join(mapping_path, "input_base.csv")
+    outp_map_base = os.path.join(mapping_path, "output_base.csv")
+    inp_map_overlay = os.path.join(mapping_path, "input_overlay.csv")
+    outp_map_overlay = os.path.join(mapping_path, "output_overlay.csv")
+    shadow_path = os.path.join(base_dir, "resources", "shadows.png")
 
     # load image
     if skin.endswith(".png"):
