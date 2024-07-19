@@ -1,6 +1,7 @@
 from PIL import Image
 import numpy as np
-from array_generation import get_mapped_array
+
+import app.array_generation
 import requests
 from io import BytesIO
 
@@ -16,7 +17,7 @@ def make_image(
 ):
     # config of mappings
     mapping_type = "beta"
-    mapping_path = f"resources/mappings/{mapping_type}"
+    mapping_path = f"app/resources/mappings/{mapping_type}"
     inp_map_base = f"{mapping_path}/input_base.csv"
     outp_map_base = f"{mapping_path}/output_base.csv"
     inp_map_overlay = f"{mapping_path}/input_overlay.csv"
@@ -35,10 +36,12 @@ def make_image(
     inp_array = np.asarray(img)
 
     # make mappings
-    output_array_overlay = get_mapped_array(
+    output_array_overlay = app.array_generation.get_mapped_array(
         inp_map_overlay, outp_map_overlay, inp_array
     )
-    output_array_base = get_mapped_array(inp_map_base, outp_map_base, inp_array)
+    output_array_base = app.array_generation.get_mapped_array(
+        inp_map_base, outp_map_base, inp_array
+    )
     base_image = Image.fromarray(output_array_base, "RGBA")
 
     # options
@@ -52,4 +55,4 @@ def make_image(
     # resize
     final_image = base_image.resize((11 * size, 16 * size), Image.NEAREST)
     final_image.save(f"output_{label}.png")
-    print("Done!")
+    print(f"Skin {label} was generated sucesfully.")

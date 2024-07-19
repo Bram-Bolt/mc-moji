@@ -1,5 +1,5 @@
 import argparse
-from art_generation import make_image
+import app.image_generation
 
 parser = argparse.ArgumentParser(
     prog="mc-moji",
@@ -44,6 +44,10 @@ parser.add_argument(
 args = parser.parse_args()
 
 for idx, skin in enumerate(args.skin):
-    make_image(
+    app.image_generation.make_image(
         skin=skin, label=idx, overlay=args.overlay, shadows=args.shadows, size=args.size
     )
+
+
+def main():
+    print("All skins arts generations are finished.")
