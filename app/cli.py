@@ -53,7 +53,7 @@ def main() -> None:
     args = parse_arguments()
     for idx, skin in enumerate(args.skin):
         processed_image = generate_avatar(skin, args.shadows, args.overlay, args.size)
-        save_image(processed_image, label=str(idx + 1))
+        save_image(processed_image, filename=f"output_{str(idx + 1)}")
 
 
 if __name__ == "__main__":

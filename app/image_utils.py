@@ -13,6 +13,6 @@ def load_image(skin: str) -> Image:
 
 
 # saves the image
-def save_image(image: Image, label: str) -> None:
-    image.save(f"output_{label}.png")
-    print(f"Skin {label} was generated successfully.")
+def save_image(image: Image, filename: str) -> None:
+    image.save(f"{filename}.png")
+    print(f"Skin {filename} was generated successfully.")
