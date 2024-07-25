@@ -11,7 +11,7 @@ The skin art is inspired by  [this article](https://hypixel.net/threads/guide-ho
 To install the package, clone the repository and use `pip` to install it locally:
 
 ```bash
-git clone https://github.com/yourusername/mc-moji.git
+git clone https://github.com/bram-bolt/mc-moji.git
 cd mc-moji
 pip install .
 ```
