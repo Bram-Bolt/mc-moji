@@ -18,6 +18,9 @@ setup(
             "mc-moji=app.cli:main",
         ],
     },
+    package_data={
+        "app": ["resources/mappings/beta/*", "resources/*.png"],
+    },
     classifiers=[
         "Programming Language :: Python :: 3",
         "License :: OSI Approved :: MIT License",

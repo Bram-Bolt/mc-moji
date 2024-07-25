@@ -4,6 +4,7 @@ import os
 import app.array_generation
 import requests
 from io import BytesIO
+import pkg_resources
 
 
 # image loader
@@ -13,14 +14,15 @@ def load_image(skin) -> Image:
     url = f"https://mineskin.eu/skin/{skin}"
     response = requests.get(url)
     return Image.open(BytesIO(response.content))
-  
+
+
 # SET UP
 def make_image(
     skin: str,
     label: str,
     overlay: bool,
     shadows: bool,
-    size: int,  # yet to be supported
+    size: int,
     mapping_type: str = "beta",
 ):
     # set base directory
@@ -28,12 +30,19 @@ def make_image(
 
     # Config of mappings
     mapping_type = "beta"
-    mapping_path = os.path.join(base_dir, "resources", "mappings", mapping_type)
-    inp_map_base = os.path.join(mapping_path, "input_base.csv")
-    outp_map_base = os.path.join(mapping_path, "output_base.csv")
-    inp_map_overlay = os.path.join(mapping_path, "input_overlay.csv")
-    outp_map_overlay = os.path.join(mapping_path, "output_overlay.csv")
-    shadow_path = os.path.join(base_dir, "resources", "shadows.png")
+    inp_map_base = pkg_resources.resource_filename(
+        "app", f"resources/mappings/{mapping_type}/input_base.csv"
+    )
+    outp_map_base = pkg_resources.resource_filename(
+        "app", f"resources/mappings/{mapping_type}/output_base.csv"
+    )
+    inp_map_overlay = pkg_resources.resource_filename(
+        "app", f"resources/mappings/{mapping_type}/input_overlay.csv"
+    )
+    outp_map_overlay = pkg_resources.resource_filename(
+        "app", f"resources/mappings/{mapping_type}/output_overlay.csv"
+    )
+    shadow_path = pkg_resources.resource_filename("app", "resources/shadows.png")
 
     img = load_image(skin)
     # generate array
