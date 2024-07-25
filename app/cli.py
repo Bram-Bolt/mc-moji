@@ -49,9 +49,8 @@ def parse_arguments() -> argparse.Namespace:
 
 
 def main() -> None:
-    # parse arguments
+    # generate avatars based on arguments
     args = parse_arguments()
-
     for idx, skin in enumerate(args.skin):
         processed_image = generate_avatar(skin, args.shadows, args.overlay, args.size)
         save_image(processed_image, label=str(idx + 1), size=args.size)

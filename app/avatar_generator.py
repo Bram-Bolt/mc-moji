@@ -2,14 +2,15 @@
 import os
 import numpy as np
 from PIL import Image
-from app.image_utils import load_image, save_image
+from app.image_utils import load_image
 from app.map_utils import get_mapped_array
 from app.image_processing import apply_overlay, apply_shadows
 
 
 def generate_avatar(
-    skin_path: str, enable_shadows: bool, enable_overlay: bool, size: int
+    skin_path: str, enable_shadows: bool, enable_overlay: bool
 ) -> Image:
+
     # get mappings
     base_dir = os.path.dirname(os.path.abspath(__file__))
     mapping_type = "beta"
@@ -20,12 +21,15 @@ def generate_avatar(
     outp_map_overlay = os.path.join(mapping_path, "output_overlay.csv")
     shadow_path = os.path.join(base_dir, "resources", "shadows.png")
 
+    # load skin
     img = load_image(skin_path)
     inp_array = np.asarray(img)
 
+    # map skin image to generated avatar
     output_array_base = get_mapped_array(inp_map_base, outp_map_base, inp_array)
     base_image = Image.fromarray(output_array_base, "RGBA")
 
+    # add overlays or shadows
     if enable_overlay:
         output_array_overlay = get_mapped_array(
             inp_map_overlay, outp_map_overlay, inp_array
