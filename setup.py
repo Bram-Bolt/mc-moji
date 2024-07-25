@@ -15,7 +15,7 @@ setup(
     ],
     entry_points={
         "console_scripts": [
-            "mc-moji=script:main",
+            "mc-moji=app.cli:main",
         ],
     },
     classifiers=[
