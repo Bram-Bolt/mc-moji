@@ -8,7 +8,7 @@ from app.image_processing import apply_overlay, apply_shadows
 
 
 def generate_avatar(
-    skin_path: str, enable_shadows: bool, enable_overlay: bool
+    skin_path: str, enable_shadows: bool, enable_overlay: bool, size: int
 ) -> Image:
 
     # get mappings
@@ -41,4 +41,5 @@ def generate_avatar(
         shadow_image = Image.open(shadow_path)
         base_image = apply_shadows(base_image, shadow_image)
 
-    return base_image
+    final_image = base_image.resize((11 * size, 16 * size), Image.NEAREST)
+    return final_image

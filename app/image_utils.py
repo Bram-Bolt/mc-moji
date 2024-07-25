@@ -13,7 +13,6 @@ def load_image(skin: str) -> Image:
 
 
 # saves the image
-def save_image(image: Image, label: str, size: int) -> None:
-    final_image = image.resize((11 * size, 16 * size), Image.NEAREST)
-    final_image.save(f"output_{label}.png")
+def save_image(image: Image, label: str) -> None:
+    image.save(f"output_{label}.png")
     print(f"Skin {label} was generated successfully.")
