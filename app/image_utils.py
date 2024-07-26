@@ -1,6 +1,7 @@
 from PIL import Image
 import requests
 from io import BytesIO
+from pathlib import Path
 
 
 # loads image, either from the web or local
@@ -13,6 +14,7 @@ def load_image(skin: str) -> Image:
 
 
 # saves the image
-def save_image(image: Image, filename: str) -> None:
-    image.save(f"{filename}.png")
+def save_image(image: Image, filename: str, location: str) -> None:
+    save_location = Path(location, f"{filename}.png")
+    image.save(save_location)
     print(f"Skin {filename} was generated successfully.")
