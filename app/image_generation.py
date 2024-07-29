@@ -1,7 +1,7 @@
 from PIL import Image
 import numpy as np
 import os
-import app.array_generation
+import array_generation
 import requests
 from io import BytesIO
 import pkg_resources
@@ -49,10 +49,10 @@ def make_image(
     inp_array = np.asarray(img)
 
     # make mappings
-    output_array_overlay = app.array_generation.get_mapped_array(
+    output_array_overlay = array_generation.get_mapped_array(
         inp_map_overlay, outp_map_overlay, inp_array
     )
-    output_array_base = app.array_generation.get_mapped_array(
+    output_array_base = array_generation.get_mapped_array(
         inp_map_base, outp_map_base, inp_array
     )
     base_image = Image.fromarray(output_array_base, "RGBA")
