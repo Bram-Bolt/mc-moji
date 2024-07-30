@@ -2,9 +2,9 @@
 import os
 import numpy as np
 from PIL import Image
-from image_utils import load_image
-from map_utils import get_mapped_array
-from image_processing import apply_overlay, apply_shadows
+from .image_utils import load_image
+from .map_utils import get_mapped_array
+from .image_processing import apply_overlay, apply_shadows
 
 
 def generate_avatar(

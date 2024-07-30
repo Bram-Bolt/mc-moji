@@ -1,6 +1,6 @@
 import argparse
-from avatar_generator import generate_avatar
-from image_utils import save_image
+from .avatar_generator import generate_avatar
+from .image_utils import save_image
 
 
 # parses CLI arguments
