@@ -7,8 +7,8 @@ setup(
     long_description=open("README.md").read(),
     long_description_content_type="text/markdown",
     author="Bram Bolt",
-    author_email="bram@gelebeer.nl",
-    url="https://github.com/yourusername/mc-moji",
+    author_email="contact@brambolt.me",
+    url="https://github.com/bram-bolt/mc-moji",
     packages=find_packages(),
     install_requires=[
         "Pillow>=8.0.0",
