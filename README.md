@@ -69,9 +69,9 @@ You can enter as many names you want.
 ```bash
 mc-moji Stexe Alex Herobrine --size 10
 ```
-## Contact
-
-For any questions, reach out to [bram@gelebeer.nl](mailto:bram@gelebeer.nl).
+## Contact & Contributing
+All types of contributions are encouraged and valued. From adding extra mappings to code refactors. Just open a pull request or issue and I will take a look at it.
+For more complex suggestions, or questions, reach out to [contact@brambolt.me](mailto:contact@brambolt.me).
 
 ## License
 
